@@ -25,23 +25,45 @@
         <div class="row divider-1">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12"></div>
         </div> 
-        <!-- add task section -->
-        <div class="row add_task text-center">
-            <div class="col-lg-9 col-md-9 col-sm-12 col-12 text-center">
-                <form>
-                    <input type="text" id="addTask" placeholder="Add a task...">
-                </form>&nbsp;
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                <button type="submit" class="btn btn-primary add_task_btn" onclick="addTaskToList()">Add Task</button>
-            </div>
-        </div>           
-        <!-- task list section -->
+        <!-- content section -->
         <div class="row task_content">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <ul id="myTask">
                 </ul>
             </div>
+        </div>
+        <button id="plus_modal" class="btn text-center" data-toggle="modal" data-target="#add_new_item">+</button>
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade" id="add_new_item" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-body text-white">
+                <br>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title text-center">Add new Task</h3>
+                <hr>
+                <form>
+                    <div class="form-group">
+                        Task:<br><input type="text" id="addTask" placeholder="Add a task...">
+                    </div>
+                    <div class="form-group">
+                        Description:<textarea class="form-control" id="desp" rows="2" placeholder="Short Description of task"></textarea>
+                    </div>
+                    <div class="form-group">
+                        Due Date:<br><input type="date" id="date">
+                    </div>
+                </form>
+                <br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary add_task_btn" onclick="addTaskToList()">Add Task</button>
+                </div>
+                <br>
+            </div>
+          </div>
         </div>
     </div>
 

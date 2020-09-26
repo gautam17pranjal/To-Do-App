@@ -53,15 +53,27 @@ function showTasks(){
         const li = document.createElement("li");
         li.setAttribute("type", "none"); 
         li.setAttribute("class", "item");
+        // li.setAttribute("class", "d-flex flex-row")
         if(myList[i].complete){
             checked = "checked";
         }
         else{
             checked = null;
         }
-        li.innerHTML = `<input type="checkbox" class="check" onclick="taskDone(${myList[i].id})" ${checked}>
-        &nbsp;&nbsp;${myList[i].name}
-        <button class="btn btn-danger delete_task float-right text-center" onclick="removeTask(${myList[i].id})" task-id="${myList[i].id}">x</button><hr>`
+        due = new Date(myList[i].due);
+        var date = month[due.getMonth()] + " " + due.getDate() + ", " + due.getFullYear();
+        li.innerHTML = `
+        <div>
+                <input type="checkbox" class="check" onclick="taskDone(${myList[i].id})" ${checked}>
+                &nbsp;&nbsp;
+                <span>${myList[i].name}</span>
+                <button class="btn btn-danger float-right delete_task text-center" onclick="removeTask(${myList[i].id})" task-id="${myList[i].id}">x</button>
+                <p class="p_date float-right">${date}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+        <div>
+            <p class="p_desp">${myList[i].description}</p>
+        </div><hr> 
+        `
         list.append(li);
     }
 }
@@ -69,13 +81,20 @@ function showTasks(){
 // add tasks to to do list
 function addTaskToList(){
     var new_task = document.getElementById("addTask").value.trim();
-    if(new_task.length == 0){   // validate entry
+    var desp = document.getElementById("desp").value.trim();
+    var due = new Date(document.getElementById("date").value.trim());
+    var today = new Date();
+    if(new_task.length == 0 || desp.length == 0){   // validate entry
         alert("Empty!");
     }
+    else if (due.getTime() < today.getTime()) 
+        alert("Due date already gone!");  
     else{   // add the task to the list
         var task = {
             "id" : Date.now(),
             "name" : new_task,
+            "description" : desp,
+            "due" : due,
             "complete" : false
         }
         myList.push(task);
