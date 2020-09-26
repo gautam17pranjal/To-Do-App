@@ -1,0 +1,91 @@
+body, .container-fluid{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* header section */
+.head-l{
+    background-image: linear-gradient(rgba(65, 86, 110, 0.5), rgba(120, 100, 144, 0.5));
+    padding-left: 10%;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.head-sec{
+    background-image: url("images/back2.jpg");
+    background-position: 25% 55%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+.task_summ{
+    background-image: linear-gradient(rgba(72, 60, 73, 0.5), rgba(23, 39, 65, 0.5));
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 7%;
+    padding-right: 10%;
+}
+h1{
+    font-size: 80px;
+}
+#curr_date{
+    font-size: 30px;
+}
+
+/* add task section  */
+.add_task{
+    padding: 50px 10% 20px 10%;
+    background-color: rgba(238, 238, 240, 0.3);
+    font-family: 'Quicksand', sans-serif;
+}
+#addTask{
+    width: 80%;
+    border-radius: 25px;
+    height: 40px;
+    padding-left: 20px;
+    background-color: rgba(245, 240, 245);
+    min-width: 230px;
+}
+.add_task_btn{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #45529c;
+    border-color: #45529c;
+}
+
+/* divider section */
+.divider-1{
+    background-image: linear-gradient(rgba(123, 141, 248, 1),rgba(63, 192, 231, 1));
+    height: 5px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* task content section */
+.task_content{
+    padding: 50px 10% 50px 10%;
+    /* background-color: rgb(240, 239, 239); */
+    font-family: 'Quicksand', sans-serif;
+}
+ul{
+    padding: 0px;
+}
+li{
+    padding: 5px 0px;
+    font-size: 20px;
+}
+.btn-danger{
+    background-color: #2eb9ef;
+    border-color: #2eb9ef;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    padding: 0px;
+}
+input.check{
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    background-color: rgb(184, 182, 182);
+}
